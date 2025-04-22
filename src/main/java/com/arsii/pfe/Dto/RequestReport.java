@@ -18,5 +18,6 @@ public class RequestReport {
     String Heure;
     String Description;
     String auteur;
+    Boolean status;
 
 }

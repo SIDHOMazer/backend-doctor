@@ -55,8 +55,7 @@ public class PlanDeTraitementServiceImpl implements PlanDeTraitementService {
                 .Objectif(planDeTraitementRequest.getObjectif())
                 .DateDebut(planDeTraitementRequest.getDateDebut())
                 .DateFin(planDeTraitementRequest.getDateFin())
-                .Status(planDeTraitementRequest.getStatus())
-
+               .status(true)
                .build();
 
       planDeTraitementRepository.save(planDeTraitement);

@@ -17,5 +17,6 @@ public class RequestTestDeSante {
     String TestDate;
     String Result;
 
+    Boolean status;
 
 }

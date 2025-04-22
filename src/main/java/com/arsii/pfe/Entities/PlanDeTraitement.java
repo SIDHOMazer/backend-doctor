@@ -24,7 +24,7 @@ public class PlanDeTraitement {
     String Objectif;
     String DateDebut;
     String DateFin;
-    String Status;
+    Boolean status;
 
     @CreationTimestamp
     private Instant createdAt;

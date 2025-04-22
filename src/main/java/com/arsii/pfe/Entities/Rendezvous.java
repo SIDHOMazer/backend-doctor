@@ -25,6 +25,8 @@ public class Rendezvous {
     String acceptDate;
     String rejectDate;
     String NameCompany;
+    Boolean status;
+
 
 
     @CreationTimestamp

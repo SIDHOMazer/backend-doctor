@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -18,6 +20,10 @@ public class ResponseMedicamentPlan {
     String MomentOfTaking; // day,evening,night
     ResponseMedicament medicament;
     ResponsePlanDeTraitement planDeTraitement;
+    Boolean status;
+
+    Instant createdAt;
+    Instant updateAt;
 
     public static ResponseMedicamentPlan makeMedicamentPlan(MedicamentPlan medicamentPlan ) {
         return ResponseMedicamentPlan.builder()
@@ -26,6 +32,9 @@ public class ResponseMedicamentPlan {
                 .frequence(medicamentPlan.getFrequence())
                 .MomentOfTaking(medicamentPlan.getMomentOfTaking())
                 .medicament(ResponseMedicament.makeMedicament(medicamentPlan.getMedicament()))
+                .status(medicamentPlan.getStatus())
+                .createdAt(medicamentPlan.getCreatedAt())
+                .updateAt(medicamentPlan.getUpdateAt())
 
                 .build();
     }

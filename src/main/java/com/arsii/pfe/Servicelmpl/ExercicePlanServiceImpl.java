@@ -54,6 +54,7 @@ public class ExercicePlanServiceImpl implements ExercicePlanService {
                 .jour(exercicePlanRequest.getJour())
                 .type(exercicePlanRequest.getType())
                 .Muscles(exercicePlanRequest.getMuscles())
+                .status(true)
                 .build();
 
         exercicePlanRepository.save(exercicePlan);
@@ -91,6 +92,9 @@ public class ExercicePlanServiceImpl implements ExercicePlanService {
 
         if (exercicePlanRequest.getType() != null) {
             exercicePlan.setType(exercicePlanRequest.getType());
+        }
+        if (exercicePlanRequest.getStatus() != null){
+            exercicePlan.setStatus(exercicePlanRequest.getStatus());
         }
 
          return  exercicePlanRepository.save(exercicePlan);

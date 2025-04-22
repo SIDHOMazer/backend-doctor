@@ -29,6 +29,8 @@ public class Facture {
     String SubTotal;
     String Tax;
     String PaymentMethod;
+    Boolean status;
+
 
     @CreationTimestamp
     private Instant createdAt;

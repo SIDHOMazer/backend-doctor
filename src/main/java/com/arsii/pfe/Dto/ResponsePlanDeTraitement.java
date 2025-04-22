@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,18 +21,20 @@ public class ResponsePlanDeTraitement {
     String DateDebut;
     String DateFin;
     ResponsePatient patient;
-    String Status;
     ResponseDocteur docteur;
     List<ResponseExercicePlan> exercicePlans;
     List<ResponseTestDeSantePlan> testDeSantePlans;
     List<ResponseMedicamentPlan> medicamentPlans;
+    Boolean status;
+
+    Instant createdAt;
+    Instant updateAt;
     public static ResponsePlanDeTraitement makePlanDeTraitement( PlanDeTraitement planDeTraitement ) {
         return ResponsePlanDeTraitement.builder()
                 .id(planDeTraitement.getId())
                 .Objectif(planDeTraitement.getObjectif())
                 .DateDebut(planDeTraitement.getDateDebut())
                 .DateFin(planDeTraitement.getDateFin())
-                .Status(planDeTraitement.getStatus())
                 .patient(ResponsePatient.makePatientOnly(planDeTraitement.getPatient()))
                 .docteur(ResponseDocteur.makeDocteur(planDeTraitement.getDocteur()))
                 .exercicePlans(
@@ -46,6 +49,9 @@ public class ResponsePlanDeTraitement {
                         planDeTraitement.getTestDeSantePlans().stream().map(ResponseTestDeSantePlan::makeTestDeSantePlan)
                                 .collect(Collectors.toList())
                 )
+                .status(planDeTraitement.getStatus())
+                .createdAt(planDeTraitement.getCreatedAt())
+                .updateAt(planDeTraitement.getUpdateAt())
                 .build();
     }
 }

@@ -24,8 +24,7 @@ public class Exercice {
     String NameDisease;
     String description;
     String file;
-
-
+    Boolean status;
 
 
 
@@ -34,7 +33,7 @@ public class Exercice {
     @UpdateTimestamp
     private Instant updateAt;
 
-@ManyToOne
-@JoinColumn(name = "exercice_plan_id")
-private ExercicePlan exercicePlan;
+    @ManyToOne
+    @JoinColumn(name = "exercice_plan_id")
+    private ExercicePlan exercicePlan;
 }

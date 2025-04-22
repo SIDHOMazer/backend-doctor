@@ -30,6 +30,7 @@ public class RequestTestDeSantePlan {
     String description;
     String file;
     String date;
+    Boolean status;
 
 
 }

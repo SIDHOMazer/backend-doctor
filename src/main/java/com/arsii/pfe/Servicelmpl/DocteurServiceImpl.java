@@ -49,7 +49,7 @@ public class DocteurServiceImpl implements DocteurService {
                 .ville(docteurRequest.getVille())
                 .codePostal(docteurRequest.getCodePostal())
                 .Localisation(docteurRequest.getLocalisation())
-                .status(docteurRequest.getStatus())
+                .status(true)
                 .build();
         docteurRepository.save(docteur);
     }

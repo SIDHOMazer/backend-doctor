@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -19,6 +21,10 @@ public class ResponseRendezvous {
     String acceptDate;
     String rejectDate;
     String NameCompany;
+    Boolean status;
+
+    Instant createdAt;
+    Instant updateAt;
 
     ResponseDocteur docteur;
 
@@ -34,6 +40,9 @@ public class ResponseRendezvous {
                 .acceptDate(rendezvous.getAcceptDate())
                 .rejectDate(rendezvous.getRejectDate())
                 .NameCompany(rendezvous.getNameCompany())
+                .status(rendezvous.getStatus())
+                .createdAt(rendezvous.getCreatedAt())
+                .updateAt(rendezvous.getUpdateAt())
 
                 .build();
     }

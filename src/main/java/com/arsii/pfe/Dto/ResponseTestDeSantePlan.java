@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
 import java.time.LocalDate;
 
 @Data
@@ -30,6 +31,10 @@ public class ResponseTestDeSantePlan {
     String description;
     String file;
     String date;
+    Boolean status;
+
+    Instant createdAt;
+    Instant updateAt;
 
     ResponseTestDeSante testDeSante;
     ResponsePlanDeTraitement planDeTraitement;
@@ -46,6 +51,9 @@ public class ResponseTestDeSantePlan {
                 .symptomes(testDeSantePlan.getSymptomes())
                 .checkbok(testDeSantePlan.getCheckbok())
                 .testDeSante(ResponseTestDeSante.makeTestDeSante(testDeSantePlan.getTestDeSante()))
+                .status(testDeSantePlan.getStatus())
+                .createdAt(testDeSantePlan.getCreatedAt())
+                .updateAt(testDeSantePlan.getUpdateAt())
 
 
                 .build();

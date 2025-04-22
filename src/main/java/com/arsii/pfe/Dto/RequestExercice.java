@@ -15,5 +15,7 @@ public class RequestExercice {
     String NameDisease;
     String description;
     String file;
+    Boolean status;
+
 
 }

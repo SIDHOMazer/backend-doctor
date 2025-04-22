@@ -29,6 +29,8 @@ public class TestDeSantePlan {
     Boolean sportif;
     String symptomes;
     String checkbok ;
+    Boolean status;
+
 
 
 

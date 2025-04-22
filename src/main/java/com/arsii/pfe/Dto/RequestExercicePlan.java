@@ -21,5 +21,6 @@ public class RequestExercicePlan {
     String duree; //en minute
     String jour;
     String type; //cardio, musculation, etirement
+    Boolean status;
 
 }

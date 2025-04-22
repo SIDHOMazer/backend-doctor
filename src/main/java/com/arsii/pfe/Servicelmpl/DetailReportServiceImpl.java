@@ -51,6 +51,7 @@ public class DetailReportServiceImpl implements DetailReportService {
                .HealthHistory(detailReportRequest.getHealthHistory())
                .FamilyHealthHistory(detailReportRequest.getFamilyHealthHistory())
                .Autre(detailReportRequest.getAutre())
+               .status(true)
                .build();
 
    detailReportRepository.save(detailReport);
@@ -85,6 +86,9 @@ public class DetailReportServiceImpl implements DetailReportService {
        if (detailReportRequest.getAutre() != null) {
            detailReport.setAutre(detailReportRequest.getAutre());
        }
+       if (detailReportRequest.getStatus() != null) {
+           detailReport.setStatus(detailReportRequest.getStatus());
+         }
         return detailReportRepository.save(detailReport);
     }
    @Override

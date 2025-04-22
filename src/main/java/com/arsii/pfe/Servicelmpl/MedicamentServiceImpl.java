@@ -46,6 +46,7 @@ public class MedicamentServiceImpl implements MedicamentService {
                 .medicament(medicamentRequest.getMedicament())
                 .note(medicamentRequest.getNote())
                 .file(medicamentRequest.getFile())
+                .status(true)
 
                 .build();
 
@@ -71,6 +72,9 @@ public class MedicamentServiceImpl implements MedicamentService {
         }
         if (medicamentRequest.getFile() != null) {
             medicament.setFile(medicamentRequest.getFile());
+        }
+        if (medicamentRequest.getStatus() != null) {
+            medicament.setStatus(medicamentRequest.getStatus());
         }
        return medicamentRepository.save(medicament);
 

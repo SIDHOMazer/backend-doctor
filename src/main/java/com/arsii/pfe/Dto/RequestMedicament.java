@@ -15,6 +15,7 @@ public class RequestMedicament {
     String note;
     String file;
 
+    Boolean status;
 
 
 }

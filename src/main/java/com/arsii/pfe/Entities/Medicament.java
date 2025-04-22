@@ -23,6 +23,8 @@ public class Medicament {
     String medicament;
     String note;
     String file;
+    Boolean status;
+
 
     @CreationTimestamp
     private Instant createdAt;

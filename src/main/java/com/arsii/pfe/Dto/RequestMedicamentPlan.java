@@ -19,5 +19,6 @@ public class RequestMedicamentPlan {
     String frequence; // 2fois par jour
     String MomentOfTaking; // day,evening,night
 
+    Boolean status;
 
 }

@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
 import java.time.LocalDate;
 
 @Data
@@ -18,7 +19,10 @@ public class ResponseTestDeSante {
     String TestName;
     String TestDate;
     String Result;
+    Boolean status;
 
+    Instant createdAt;
+    Instant updateAt;
 
     ResponseTestDeSantePlan testDeSantePlan;
 
@@ -28,6 +32,9 @@ public class ResponseTestDeSante {
                 .TestName(testDeSante.getTestName())
                 .TestDate(testDeSante.getTestDate())
                 .Result(testDeSante.getResult())
+                .status(testDeSante.getStatus())
+                .createdAt(testDeSante.getCreatedAt())
+                .updateAt(testDeSante.getUpdateAt())
 
 
 

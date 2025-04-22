@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -17,13 +19,19 @@ public class ResponseExercice {
     String NameDisease;
     String description;
     String file;
+    Boolean status;
 
+    Instant createdAt;
+    Instant updateAt;
 
     public static ResponseExercice makeExercice(Exercice exercice) {
         return ResponseExercice.builder()
                 .id(exercice.getId())
                 .NameExercice(exercice.getNameExercice())
                 .NameDisease(exercice.getNameDisease())
+                .status(exercice.getStatus())
+                .createdAt(exercice.getCreatedAt())
+                .updateAt(exercice.getUpdateAt())
                 .description(exercice.getDescription())
                 .file(exercice.getFile())
 

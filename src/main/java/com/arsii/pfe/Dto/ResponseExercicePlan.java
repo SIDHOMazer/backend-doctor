@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -22,6 +24,9 @@ public class ResponseExercicePlan {
     ResponseExercice exercice;
 
     ResponsePlanDeTraitement planDeTraitement;
+    Instant createdAt;
+    Instant updateAt;
+    Boolean status;
 
     public static ResponseExercicePlan makeExercicePlan (ExercicePlan exercicePlan ) {
         return ResponseExercicePlan.builder()
@@ -32,6 +37,9 @@ public class ResponseExercicePlan {
                 .Muscles(exercicePlan.getMuscles())
                 .jour(exercicePlan.getJour())
                 .type(exercicePlan.getType())
+                .createdAt(exercicePlan.getCreatedAt())
+                .updateAt(exercicePlan.getUpdateAt())
+                .status(exercicePlan.getStatus())
                 .exercice(ResponseExercice.makeExercice(exercicePlan.getExercice()))
 
                 .build();

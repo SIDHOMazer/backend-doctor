@@ -26,6 +26,8 @@ public class DetailReport {
     String HealthHistory;
     String FamilyHealthHistory;
     String Autre; //Cystite, Infection
+    Boolean status;
+
     @CreationTimestamp
     private Instant createdAt;
     @UpdateTimestamp

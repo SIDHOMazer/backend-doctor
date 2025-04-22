@@ -34,7 +34,9 @@ public class ExercicePlan {
     @UpdateTimestamp
     private Instant updateAt;
 
-@ManyToOne
+    Boolean status;
+
+    @ManyToOne
     @JoinColumn(name = "planDeTraitement_id")
     private PlanDeTraitement planDeTraitement;
     @ManyToOne

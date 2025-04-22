@@ -54,6 +54,7 @@ public class MedicamentPlanServiceImpl implements MedicamentPlanService {
                 .dosage(medicamentPlanRequest.getDosage())
                 .frequence(medicamentPlanRequest.getFrequence())
                 .MomentOfTaking(medicamentPlanRequest.getMomentOfTaking())
+                .status(true)
                 .build();
 
         medicamentPlanRepository.save(medicamentPlan);
@@ -82,7 +83,9 @@ public class MedicamentPlanServiceImpl implements MedicamentPlanService {
         if (medicamentPlanRequest.getMomentOfTaking() != null) {
             medicamentPlan.setMomentOfTaking(medicamentPlanRequest.getMomentOfTaking());
         }
-
+         if (medicamentPlanRequest.getStatus() != null){
+                medicamentPlan.setStatus(medicamentPlanRequest.getStatus());
+         }
 
          return  medicamentPlanRepository.save(medicamentPlan);
 

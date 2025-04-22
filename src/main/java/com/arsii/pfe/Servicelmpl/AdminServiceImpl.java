@@ -43,7 +43,7 @@ public class AdminServiceImpl implements AdminService{
               .adresse(adminRequest.getAdresse())
               .ville(adminRequest.getVille())
               .codePostal(adminRequest.getCodePostal())
-                .status(adminRequest.getStatus())
+              .status(true)
               .build();
       adminRepository.save(admin);
    }

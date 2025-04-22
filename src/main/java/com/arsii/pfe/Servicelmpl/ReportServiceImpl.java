@@ -45,6 +45,7 @@ public class ReportServiceImpl implements ReportService{
                 .Date(reportRequest.getDate())
                 .Heure(reportRequest.getHeure())
                 .Description(reportRequest.getDescription())
+                .status(true)
               .build();
 
       reportRepository.save(report);
@@ -76,6 +77,9 @@ public class ReportServiceImpl implements ReportService{
         }
         if (reportRequest.getDescription() != null){
             report.setDescription(reportRequest.getDescription());
+        }
+        if (reportRequest.getStatus() != null){
+            report.setStatus(reportRequest.getStatus());
         }
 
 

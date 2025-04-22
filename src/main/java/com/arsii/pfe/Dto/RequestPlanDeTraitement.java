@@ -16,7 +16,7 @@ public class RequestPlanDeTraitement {
     String Objectif;
     String DateDebut;
     String DateFin;
-    String Status;
+    Boolean status;
 
 
 }

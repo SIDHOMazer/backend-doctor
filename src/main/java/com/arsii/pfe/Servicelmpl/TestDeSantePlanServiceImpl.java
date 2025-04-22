@@ -54,6 +54,7 @@ public class TestDeSantePlanServiceImpl implements TestDeSantePlanService{
                 .sportif(testDeSantePlanRequest.getSportif())
                 .symptomes(testDeSantePlanRequest.getSymptomes())
                 .checkbok(testDeSantePlanRequest.getCheckbok())
+                .status(true)
                 .build();
 
         testDeSantePlanRepository.save(testDeSantePlan);
@@ -96,6 +97,9 @@ public class TestDeSantePlanServiceImpl implements TestDeSantePlanService{
         }
         if (testDeSantePlanRequest.getCheckbok() != null) {
             testDeSantePlan.setCheckbok(testDeSantePlanRequest.getCheckbok());
+        }
+        if (testDeSantePlanRequest.getStatus() != null) {
+            testDeSantePlan.setStatus(testDeSantePlanRequest.getStatus());
         }
 
 

@@ -24,6 +24,8 @@ public class TestDeSante {
     String TestName;
     String TestDate;
     String Result;
+    Boolean status;
+
 
     @CreationTimestamp
     private Instant createdAt;

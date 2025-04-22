@@ -49,6 +49,7 @@ public class FactureServiceImpl implements FactureService {
                 .SubTotal(facteurRequest.getSubTotal())
                 .Tax(facteurRequest.getTax())
                 .PaymentMethod(facteurRequest.getPaymentMethod())
+                .status(true)
                 .build();
 
         factureRepository.save(facture);
@@ -95,6 +96,9 @@ public class FactureServiceImpl implements FactureService {
         }
         if (factureRequest.getPaymentMethod() != null) {
             facture.setPaymentMethod(factureRequest.getPaymentMethod());
+        }
+        if (factureRequest.getStatus() != null) {
+            facture.setStatus(factureRequest.getStatus());
         }
 
 

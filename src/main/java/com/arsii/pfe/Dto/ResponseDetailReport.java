@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -20,6 +22,10 @@ public class ResponseDetailReport {
     String HealthHistory;
     String FamilyHealthHistory;
     String Autre; //Cystite, Infection
+    Boolean status;
+
+    Instant createdAt;
+    Instant updateAt;
     public static ResponseDetailReport makeDetailReport(DetailReport detailreport) {
         return ResponseDetailReport.builder()
                 .id(detailreport.getId())
@@ -28,6 +34,9 @@ public class ResponseDetailReport {
                 .SurgicalHistory(detailreport.getSurgicalHistory())
                 .TraumaHistory(detailreport.getTraumaHistory())
                 .HealthHistory(detailreport.getHealthHistory())
+                .status(detailreport.getStatus())
+                .createdAt(detailreport.getCreatedAt())
+                .updateAt(detailreport.getUpdateAt())
                 .FamilyHealthHistory(detailreport.getFamilyHealthHistory())
                 .Autre(detailreport.getTraumaHistory())
 

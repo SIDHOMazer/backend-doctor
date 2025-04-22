@@ -18,6 +18,7 @@ public class RequestRendezvous {
     String acceptDate;
     String rejectDate;
     String NameCompany;
+    Boolean status;
 
 
 

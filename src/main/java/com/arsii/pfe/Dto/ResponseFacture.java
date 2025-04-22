@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -22,6 +24,10 @@ public class ResponseFacture {
     String SubTotal;
     String Tax;
     String PaymentMethod;
+    Boolean status;
+
+    Instant createdAt;
+    Instant updateAt;
 
 
     ResponsePatient patient;
@@ -36,6 +42,9 @@ public class ResponseFacture {
                 .Description(facture.getDescription())
                 .Price(facture.getPrice())
                 .QTY(facture.getQTY())
+                .status(facture.getStatus())
+                .createdAt(facture.getCreatedAt())
+                .updateAt(facture.getUpdateAt())
                 .Total(facture.getTotal())
                 .SubTotal(facture.getSubTotal())
                 .Tax(facture.getTax())

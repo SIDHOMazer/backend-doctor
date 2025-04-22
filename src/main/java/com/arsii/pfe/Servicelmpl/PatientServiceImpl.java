@@ -49,7 +49,7 @@ public class PatientServiceImpl implements PatientService {
                 .ville(patientRequest.getVille())
                 .codePostal(patientRequest.getCodePostal())
                 .sexe(patientRequest.getSexe())
-                .status(patientRequest.getStatus())
+                .status(true)
                 .build();
         patientRepository.save(patient);
     }

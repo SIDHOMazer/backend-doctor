@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -16,6 +18,10 @@ public class ResponseMedicament {
     String medicament;
     String note;
     String file;
+    Boolean status;
+
+    Instant createdAt;
+    Instant updateAt;
 
 
     ResponseMedicamentPlan medicamentPlan;
@@ -24,7 +30,9 @@ public class ResponseMedicament {
         return ResponseMedicament.builder()
                 .id(medicament.getId())
                 .medicament(medicament.getMedicament())
-
+                .status(medicament.getStatus())
+                .createdAt(medicament.getCreatedAt())
+                .updateAt(medicament.getUpdateAt())
                 .note(medicament.getNote())
                 .file(medicament.getFile())
 

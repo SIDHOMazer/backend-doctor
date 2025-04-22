@@ -57,6 +57,7 @@ public class RendezvousServiceImpl implements RendezvousService{
                 .acceptDate(rendezvousRequest.getAcceptDate())
                 .rejectDate(rendezvousRequest.getRejectDate())
                 .NameCompany(rendezvousRequest.getNameCompany())
+                .status(true)
 
                 .build();
 
@@ -92,6 +93,9 @@ public class RendezvousServiceImpl implements RendezvousService{
         }
         if (rendezvousRequest.getNameCompany() != null) {
             rendezvous.setNameCompany(rendezvousRequest.getNameCompany());
+        }
+        if (rendezvousRequest.getStatus() != null) {
+            rendezvous.setStatus(rendezvousRequest.getStatus());
         }
         return rendezvousRepository.save(rendezvous);
 

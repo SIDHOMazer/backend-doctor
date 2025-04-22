@@ -26,6 +26,8 @@ public class Report {
     String Date;
     String Heure;
     String Description;
+    Boolean status;
+
 
     @CreationTimestamp
     private Instant createdAt;

@@ -46,6 +46,7 @@ public class TestDeSanteServiceImpl implements TestDeSanteService {
                 .TestName(testDeSanteRequest.getTestName())
                 .TestDate(testDeSanteRequest.getTestDate())
                 .Result(testDeSanteRequest.getResult())
+                .status(true)
 
                 .build();
 
@@ -71,6 +72,9 @@ public class TestDeSanteServiceImpl implements TestDeSanteService {
         }
         if (testDeSanteRequest.getResult() != null) {
             testDeSante.setResult(testDeSanteRequest.getResult());
+        }
+        if (testDeSanteRequest.getStatus() != null) {
+            testDeSante.setStatus(testDeSanteRequest.getStatus());
         }
 
         return testDeSanteRepository.save(testDeSante);

@@ -21,6 +21,7 @@ public class RequestFacture {
     String SubTotal;
     String Tax;
     String PaymentMethod;
+    Boolean status;
 
 
 

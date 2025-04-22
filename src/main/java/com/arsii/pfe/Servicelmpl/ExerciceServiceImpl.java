@@ -47,6 +47,7 @@ public class ExerciceServiceImpl implements ExerciceService {
                 .NameDisease(exerciceRequest.getNameDisease())
                 .description(exerciceRequest.getDescription())
                 .file(exerciceRequest.getFile())
+                .status(true)
 
                 .build();
 
@@ -75,6 +76,9 @@ public class ExerciceServiceImpl implements ExerciceService {
         }
         if (exerciceRequest.getDescription() != null) {
             exercice.setDescription(exerciceRequest.getDescription());
+        }
+        if (exerciceRequest.getStatus() != null){
+            exercice.setStatus(exerciceRequest.getStatus());
         }
 
         return exerciceRepository.save(exercice);
